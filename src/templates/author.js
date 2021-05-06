@@ -9,9 +9,11 @@ const UserTemplate = ({ data }) => (
       {data.strapiUser.articles.map(article => (
         <li key={article.id}>
           <h2>
-            <Link to={`/Article_${article.id}`}>{article.title}</Link>
+            <Link to={`/Article_${data.strapiArticles.article.id}`}>
+              {article.title}
+            </Link>
           </h2>
-          <p>{article.content}</p>
+          <p>{data.strapiArticles.article.content}</p>
         </li>
       ))}
     </ul>
